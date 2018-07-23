@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SportDay</title>
+    <title>Sport Day</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(window).on('load', function(){
+        liff.init(function (data) {});
+      });
+    </script>
   </head>
 
   <body>
