@@ -1,13 +1,15 @@
 class Team < ApplicationRecord
-  validates :code, presence: true, uniqueness: true
   validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :last_name, presence: true, uniqueness: { scope: :first_name }
+  validates :code, presence: true, uniqueness: true
 
-  before_create :random_color
+  after_create :random_color
 
   private
 
   def random_color
-    self.color = %w[1 2 3 4].random
+    color = self.id % 4
+    self.color = color > 0 ? color : 4
+    save
   end
 end

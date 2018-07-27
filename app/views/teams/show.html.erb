@@ -1,24 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @team.code %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @team.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @team.last_name %>
-</p>
-
-<p>
-  <strong>Team:</strong>
-  <%= @team.team %>
-</p>
-
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<div class="row">
+  <div class="col-12">
+    <div style="margin-top:50px;text-align:center;">คุณอยู่กลุ่ม</div>
+    <h1 class="display-1" style="color:#462279;font-weight:bold;text-align:center;">
+      <%= @team.color %>
+    </h1>
+  </div>
+</div>

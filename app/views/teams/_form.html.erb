@@ -1,8 +1,6 @@
-<%= form_with(model: team, local: true) do |form| %>
+<%= form_with(model: team, local: true, html: {autocomplete: 'off'}) do |form| %>
   <% if team.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
-
+    <div class="alert alert-danger">
       <ul>
       <% team.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,27 +9,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+  <p>มาลุ้นกันว่าคุณจะได้กลุ่มไหน แต่ก่อนอื่นรบกวนกรอกข้อมูลก่อนนะ</p>
+
+  <div class="form-group">
+    <%= form.label(:first_name, 'ชื่อ') %>
+    <%= form.text_field :first_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  <div class="form-group">
+    <%= form.label(:last_name, 'นามสกุล') %>
+    <%= form.text_field :last_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="form-group">
+    <%= form.label(:code, 'เลขบัตรพนักงาน') %>
+    <%= form.text_field :code, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :team %>
-    <%= form.text_field :team %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit 'ลุ้นเลย', class: 'btn btn-primary', style: 'width:100%' %>
 <% end %>
