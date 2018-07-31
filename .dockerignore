@@ -1,0 +1,13 @@
+.git
+.gitignore
+README.md
+
+# OS X
+.DS_Store
+
+# Rails
+.rspec
+/log/*
+/tmp/*
+db/*.sqlite3
+spec/tmp
