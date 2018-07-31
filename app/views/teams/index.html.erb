@@ -1,8 +1,8 @@
-<h3>กลุ่ม</h3>
+<h3>Groups</h3>
 
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link <%= 'active' unless params['group'] %>" href="<%= teams_path %>">ทั้งหมด</a>
+    <a class="nav-link <%= 'active' unless params['group'] %>" href="<%= teams_path %>">All</a>
   </li>
   <li class="nav-item">
     <a class="nav-link <%= 'active' if params['group'] == '1' %>" href="<%= teams_path(group: 1) %>">1</a>
@@ -18,8 +18,20 @@
   </li>
 </ul>
 <br />
-<ol>
+
+<table class="table-striped" width="100%">
+  <thead>
+    <th>Name</th>
+    <% unless params['group'] %>
+      <th width="10%">Group</th>
+    <% end %>
+  </thead>
   <% @teams.each do |team| %>
-    <li><%= "#{team.first_name} #{team.last_name}" %></li>
+    <tr>
+      <td><%= "#{team.first_name} #{team.last_name}" %></td>
+      <% unless params['group'] %>
+        <td style="text-align: center"><%= team.color %></td>
+      <% end %>
+    </tr>
   <% end %>
-</ol>
+</table>

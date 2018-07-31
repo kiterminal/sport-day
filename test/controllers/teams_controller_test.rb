@@ -34,7 +34,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update team" do
-    patch team_url(@team), params: { team: { code: @team.code, first_name: @team.first_name, last_name: @team.last_name, team: @team.team } }
+    patch team_url(@team), params: { team: { first_name: @team.first_name, last_name: @team.last_name, employee_id: @team.employee_id, team: @team.team } }
     assert_redirected_to team_url(@team)
   end
 

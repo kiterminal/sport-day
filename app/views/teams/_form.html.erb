@@ -9,22 +9,23 @@
     </div>
   <% end %>
 
-  <p>มาลุ้นกันว่าคุณจะได้กลุ่มไหน แต่ก่อนอื่นรบกวนกรอกข้อมูลก่อนนะ</p>
+  <p>Wanna know which group you are in? Let’s fill in a bit of your information first</p>
 
   <div class="form-group">
-    <%= form.label(:first_name, 'ชื่อ') %>
+    <%= form.label(:first_name, 'First name') %>
     <%= form.text_field :first_name, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label(:last_name, 'นามสกุล') %>
+    <%= form.label(:last_name, 'Last name') %>
     <%= form.text_field :last_name, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label(:code, 'เลขบัตรพนักงาน') %>
-    <%= form.text_field :code, class: 'form-control' %>
+    <%= form.label(:employee_id, 'Employee ID') %>
+    <%= form.text_field :employee_id, class: 'form-control' %>
   </div>
 
-  <%= form.submit 'ลุ้นเลย', class: 'btn btn-primary', style: 'width:100%' %>
+  <%= form.submit 'Submit', class: 'btn btn-primary', style: 'width:100%' %>
+  <span style="color:#f00;">** You can submit the form only once **</span>
 <% end %>

@@ -14,9 +14,9 @@ class TeamsTest < ApplicationSystemTestCase
     visit teams_url
     click_on "New Team"
 
-    fill_in "Code", with: @team.code
     fill_in "First Name", with: @team.first_name
     fill_in "Last Name", with: @team.last_name
+    fill_in "Employee Id", with: @team.employee_id
     fill_in "Team", with: @team.team
     click_on "Create Team"
 
@@ -28,9 +28,9 @@ class TeamsTest < ApplicationSystemTestCase
     visit teams_url
     click_on "Edit", match: :first
 
-    fill_in "Code", with: @team.code
     fill_in "First Name", with: @team.first_name
     fill_in "Last Name", with: @team.last_name
+    fill_in "Employee Id", with: @team.employee_id
     fill_in "Team", with: @team.team
     click_on "Update Team"
 
