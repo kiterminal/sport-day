@@ -3,18 +3,23 @@ version: '3'
 services:
   db:
     image: mongo
+    volumes:
+      - /data/mongodb:/data/db
+    ports:
+      - "27018:27017"
     networks:
       connect-network:
         ipv4_address: 172.77.0.2
-    ports:
-      - "27018:27017"
+
   app:
     build: .
+    ports:
+      - "8080:3000"
     networks:
       connect-network:
         ipv4_address: 172.77.0.3
-    ports:
-      - "8080:3000"
+    depends_on:
+      - db
 
 networks:
   connect-network:
