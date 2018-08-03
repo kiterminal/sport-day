@@ -5,8 +5,8 @@ production:
       hosts:
         - 172.77.0.2:27017
       options:
-        max_pool_size: 50
-        min_pool_size: 10
+        max_pool_size: 100
+        min_pool_size: 20
 
 development:
   # Configure available database clients. (required)

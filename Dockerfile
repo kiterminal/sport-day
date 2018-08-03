@@ -15,7 +15,7 @@ WORKDIR /app
 ENV RAILS_ENV='production'
 ENV RAKE_ENV='production'
 ENV PUMA_WORKERS=2
-ENV PUMA_MAX_THREADS=8
+ENV PUMA_MAX_THREADS=16
 ENV RAILS_SERVE_STATIC_FILES='true'
 
 # Copy the Gemfile as well as the Gemfile.lock and install the RubyGems. This is a separate step so
